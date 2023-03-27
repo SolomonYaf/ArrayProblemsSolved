@@ -1,0 +1,32 @@
+public class StantonMeasure {
+
+	public static void main(String[] args) {
+		System.out.println(stantonMeasure(new int[] {0}));
+		System.out.println(stantonMeasure(new int[] {}));
+		System.out.println(stantonMeasure(new int[] {1,1,2,2,2}));
+		System.out.println(stantonMeasure(new int[] {3,1,1,4,2}));
+		System.out.println(stantonMeasure(new int[] {1,3,1,1,3,3,2,3,3,3,4}));
+		System.out.println(stantonMeasure(null));
+
+	}
+	static int stantonMeasure(int[] a) {
+		int countOne=0;
+		int stantonNum=0;
+		//int stantonMeasure=0;
+		if (a==null) return 0;
+		for(int i=0; i<a.length; i++) {
+			
+			if(a[i]==1) {
+				countOne++;
+			}
+		}
+			for(int i=0; i<a.length; i++) {
+				
+				if(a[i]==countOne) {
+					stantonNum++;
+		}
+		
+	}
+			return stantonNum;
+}
+}
