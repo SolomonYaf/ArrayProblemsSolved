@@ -1,0 +1,30 @@
+public class AutomorphicNum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+// Automorphic Numbers 0, 1, 5, 6, 25, 76, 376, 625, 9376, 90625, 109376, 890625, 2890625, 
+		//7109376, 12890625, 87109376, 212890625, 787109376, 1787109376, 8212890625, 
+		//18212890625, 81787109376, 918212890625, 9918212890625, 40081787109376, 59918212890625
+	
+	System.out.println(automorphicNum(25));
+	System.out.println(automorphicNum(5));
+	System.out.println(automorphicNum(6));
+	System.out.println(automorphicNum(36));
+}
+public static int automorphicNum(int n) {
+	
+
+int count=0, q=n*n;
+while(n!=0) {
+	int d=n%10;
+	int d1=q%10;
+	if(d!=d1) count=1;
+	n=n/10;
+	q=q/10;
+}
+if(count==0)
+	return 1;
+else 
+	return 0; 
+}
+}
