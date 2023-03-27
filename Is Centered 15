@@ -1,0 +1,54 @@
+public class IsCentered15 {
+
+	public static void main(String[] args) {
+		System.out.println(isCentered15(new int [] {3,2,10,4,1,6,9}));
+		System.out.println(isCentered15(new int [] {2,10,4,1,6,9}));
+		System.out.println(isCentered15(new int [] {3,2,10,4,1,6}));
+		System.out.println(isCentered15(new int [] {1,1,8,3,1,1}));
+		System.out.println(isCentered15(new int [] {9,15,6}));
+		System.out.println(isCentered15(new int [] {1,1,2,2,1,1}));
+		System.out.println(isCentered15(new int [] {1,1,15,-1,-1}));
+		
+
+
+	}
+public static int isCentered15(int []a) {
+	int lowerIndex=0;
+	int upperIndex=0;
+	// int isCentred15=0;
+	//int centredSum=0;
+	for (int i=0; i<a.length; i++) {
+		if (a.length %2==0) {
+			lowerIndex=a.length/2-1;
+			upperIndex=a.length/2;
+		}
+			else {
+				lowerIndex=(a.length-1)/2;
+				upperIndex=lowerIndex;
+			}
+		while(lowerIndex>0 && upperIndex<a.length) {
+			//centredSum=0;
+			int centredSum=0;
+			for (int n=lowerIndex; n<=upperIndex; n++) {
+				
+				centredSum=centredSum+a[n];
+				
+			}
+			if(centredSum==15) {
+				//isCentred15=1;
+				return 1;
+			//break;
+			
+		}
+		lowerIndex--;
+		upperIndex++;
+		
+	}
+	}
+	
+	
+	//return isCentred15;
+	return 0;
+}
+}
+
