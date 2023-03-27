@@ -1,0 +1,28 @@
+public class ClusterCompression {
+
+	public static void main(String[] args) {
+		
+System.out.println(Arrays.toString(clusterCompression(new int[] {3,3,3,4,2,2,3,3,4,4,4})));
+System.out.println(Arrays.toString(clusterCompression(new int[] {3,3,3,4,2,2,3,3})));
+	}
+	public static int[] clusterCompression(int []a) {
+		int[]clusterComp=new int[a.length];
+		int k=1;
+		for(int i=1; i<a.length-1; i++) {
+			
+			if(a[i-1]!=a[i]) {
+				clusterComp[k]=a[i];
+				clusterComp[0]=a[0];
+			    k++;
+			}
+		}
+			int [] retArr=new int[k];
+			for(int j=0;j<retArr.length; j++) {
+				retArr[j]=clusterComp[j];
+			
+			}
+					
+		return retArr;
+	}
+
+}
