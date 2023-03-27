@@ -1,0 +1,23 @@
+public class ConvertToBase10 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+System.out.println(convertToBase10(new int[] {1,0,1,1},2));
+System.out.println(convertToBase10(new int[] {1,1,2},3));
+System.out.println(convertToBase10(new int[] {3,2,5},8));
+System.out.println(convertToBase10(new int[] {3,7,1},6));
+	}
+    public static int convertToBase10(int[]a, int base) {
+    	int baseTen=0;
+    	int exponent=0;
+    	for(int i=a.length-1;  i>=0; i--) {
+    		if(a[i]>=base) {
+    			return 0;
+    	}
+    		else
+    		baseTen += Math.pow(base, exponent)* a[i];
+    		exponent ++;
+    	}
+    return baseTen;	
+   }
+}
