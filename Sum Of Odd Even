@@ -1,0 +1,38 @@
+public class SumOfOddEven {
+
+	public static void main(String[] args) {
+		int []a1= {1};
+		int []a2= {1,2};
+		int []a3= {1,2,3};
+		int []a4= {1,2,3,4};
+		int []a5= {3,4,3,4};
+		int []a6= {3,2,3,4};
+		int []a7= {4,1,2,3};
+		int []a8= {1,1};
+		int []a9= {};
+		
+		System.out.println(String.valueOf(sumOfOddEven(a1)));
+		//System.out.println(sumOfOddEven(a1));
+		System.out.println(sumOfOddEven( a2));
+		System.out.println(sumOfOddEven( a3));
+		System.out.println(sumOfOddEven( a4));
+		System.out.println(sumOfOddEven( a5));
+		System.out.println(sumOfOddEven( a6));
+		System.out.println(sumOfOddEven( a7));
+		System.out.println(sumOfOddEven( a8));
+		System.out.println(sumOfOddEven( a9));
+	}
+	public static int sumOfOddEven(int[]a) {
+		int sumEven=0;
+		int sumOdd=0;
+		for(int i=0; i<a.length; i++) {
+			if (a[i]%2==0)
+				sumEven=sumEven+a[i];
+			else
+				sumOdd=sumOdd+a[i];
+		}
+		
+		return (sumOdd-sumEven);
+	}
+
+}
