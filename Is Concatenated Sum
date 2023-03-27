@@ -1,0 +1,30 @@
+public class IsConcatenatedSum {
+
+	public static void main(String[] args) {
+		System.out.println(isConcatenatedSum(198,2));
+		System.out.println(isConcatenatedSum(198,3));
+		System.out.println(isConcatenatedSum(2997,3));
+		System.out.println(isConcatenatedSum(2997,2));
+		System.out.println(isConcatenatedSum(13332,4));
+		System.out.println(isConcatenatedSum(2,1));
+	}
+	public static int isConcatenatedSum(int n, int catlen){
+		
+		int originNumber=n;
+		int totalSum=0;
+		
+		while(n!=0) {
+			int digit=n%10;
+			n=n/10;
+			int concatSumm=0;
+			for(int i=1;i<=catlen; i++) 
+				concatSumm = concatSumm*10+digit;
+							
+			totalSum+=concatSumm;
+			
+		}
+		if (totalSum==originNumber)
+			return 1;
+		else return 0;
+	}
+}
