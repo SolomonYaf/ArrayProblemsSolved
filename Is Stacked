@@ -1,0 +1,34 @@
+public class IsStacked {
+
+	public static void main(String[] args) {
+		System.out.println(isStacked(1));
+		System.out.println(isStacked(10));
+		System.out.println(isStacked(11));
+		System.out.println(isStacked(3));
+		System.out.println(isStacked(15));
+
+	}
+	public static int isStacked(int n)
+	{
+		//int num=n;
+		int sum=0;
+		//int isStacked=0;
+		for(int i=1; i<=n; i++) {
+			sum=sum+i;
+		
+			if(sum==n) {
+				//isStacked=1;
+			break;
+		    
+			//else
+			}	//isStacked=0;
+		}
+	
+		return sum==n?1:0;
+		/*
+		 * if(sum==n)
+		 * return 1;
+		 * else return 0;
+		 */
+	}
+}
