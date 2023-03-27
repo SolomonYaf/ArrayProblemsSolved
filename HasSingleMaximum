@@ -1,0 +1,38 @@
+public class HasSingleMaximum {
+
+	public static int hasSingleMaximum(int[] arr) {
+	
+		/* write a function named has single maximum that takes an array 
+		 * argument and returns one if the maximum value and its array
+		 * argument occurs exactly once in the array otherwise it returns zero
+		 * Signature Function is 'int hasSingleMaximum(int[] a)'
+		 *{1,2,3,0}; {18}; {1,2,3,0,1,3}, {};{-6,-6,-6,-6}
+		 *
+		 */
+					
+			if (arr.length==0) return 0;
+			int max=arr[0];
+			boolean duplicated=false;
+			for (int i=1; i< arr.length;i++) {
+				if (arr[i]> max) {
+					max=arr[i];
+					duplicated=false;
+					
+				}
+				else if(arr[i]==max) {
+					duplicated =true;
+				}
+			}
+				if(duplicated)return 0;
+				return 1;
+			}
+			
+			public static void main(String[] args) {
+			System.out.println(hasSingleMaximum(new int[] {1,2,3,0}));
+			System.out.println(hasSingleMaximum(new int[] {18}));
+			System.out.println(hasSingleMaximum(new int[] {1,2,3,0,1,3}));
+			System.out.println(hasSingleMaximum(new int[] {}));
+			System.out.println(hasSingleMaximum(new int[] {-6,-6,-6,-6}));
+			}
+	    }
+      
