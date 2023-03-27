@@ -1,0 +1,19 @@
+public class LargestPM {
+
+	public static void main(String[] args) {
+		System.out.println(largestPF(12));
+
+	}
+    public static int largestPF(int num) {
+    	int largePF=0;
+    	if(num<=1) return 0;
+    	for(int i = 2; i<=num; i++) {
+    		while(num % i==0) {
+    			if(i>largePF) largePF=i;
+    		num=num/i;
+    	}
+    	}
+		return largePF;
+    	
+    }
+}
