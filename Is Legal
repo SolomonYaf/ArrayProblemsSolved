@@ -1,0 +1,15 @@
+public class IsLegal {
+
+	public static void main(String[] args) {
+		System.out.println(isLegal(new int[] {3,2,1},4));
+		System.out.println(isLegal(new int[] {3,7,1},6));
+	}
+public static int isLegal(int []a, int base) {
+	
+	for(int i=0; i<a.length; i++) {
+		if(a[i]>=base)
+			return 0;
+	}
+	return 1;
+}
+}
