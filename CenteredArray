@@ -1,0 +1,19 @@
+public class CenteredArray {
+
+	public static void main(String[] args) {
+		System.out.println(centeredArray(new int[] {1,2,3,4}));
+		int[]a= {1,2,3,0,4,5,6};
+		System.out.println(a.length/2);
+	}
+
+    public static int centeredArray(int[]a) {
+    	if(a.length%2 ==0 || a==null) return 0;
+    	int mid=a.length/2;
+    	//int centered=0;
+    	for(int i=0; i<a.length; i++) {
+    		if(i!=mid && a[mid]<=a[i])
+    			return 1;
+    	}
+    	return 0;
+    }
+}
