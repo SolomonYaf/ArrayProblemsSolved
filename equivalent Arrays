@@ -1,0 +1,93 @@
+import java.util.Arrays;
+
+//import java.util.HashMap;
+//import java.util.Map;
+
+public class EquivalentArrays {
+
+
+		/*
+		 * write a function named equivalent arrays
+         *that has two array arguments and returns one 
+         *if the two arrays contain the same 
+         *values but not necessarily in the same order 
+         *otherwise it returns zero right so it says your 
+         *solution must not sort either array or a copy of 
+         *either array also you must not modify either array 
+         *i.e the values in the array upon return from the function 
+         *must be the same as that same as when the function was 
+         *called okay note that the arrays do not have to have 
+         *the nuts have to have the same number of elements
+         *they just have to have one or more copies of the same values
+         *
+         *prototype function is int equivalentAarrays(int[]a1,int[]a2)
+		 */
+		
+//public static int equivalentArrays(int[]a1,int[]a2) {
+	/*HashMap<Integer,Integer>mapOne=new HashMap<>();// you can make Map the first one only
+	HashMap<Integer,Integer>mapTwo=new HashMap<>();
+	 for(int i=0; i<a1.length;i++) {
+		 if(!mapOne.containsKey(a1[i]))mapOne.put(a1[i],1);
+		 else mapOne.put(a1[i],mapOne.get(a1[i])+1);
+	 }
+	 for(int i=0; i<a2.length;i++) {
+		 if(!mapTwo.containsKey(a2[i]))mapTwo.put(a2[i],1);
+		 else mapTwo.put(a2[i],mapTwo.get(a2[i])+1);
+}
+	 for(Map.Entry<Integer, Integer> entry:mapOne.entrySet()) {
+		 if(!mapTwo.containsKey(entry.getKey()))return 0;
+		 
+	 }
+	 for(Map.Entry<Integer, Integer> entry:mapTwo.entrySet()) {
+		 if(!mapOne.containsKey(entry.getKey()))return 0;
+	}
+	 return 1;
+
+  }*/
+	static int[] a5(int[] first, int[] second)
+	 {
+	 if (first == null || second == null) return null;
+	 if (first.length == 0 || second.length == 0) return new int[0];
+	 int min = 
+	(first.length < second.length) ? first.length : second.length;
+	 int[] a, b;
+	 if (min == first.length)
+	 {
+	a = first;
+	b = second;
+	 }
+	 else
+	 {
+	a = second;
+	b = first;
+	 }
+	 int[] c = new int[min];
+	 int k = 0;
+	 for (int i = 0; i < a.length; i++)
+	for (int j = 0; j < b.length; j++)
+	 if (a[i] == b[j])
+	 {
+	 c[k] = a[i];
+	 k++;
+	 }
+	 int[] retArray = new int[k];
+	 for (int t = 0; t < retArray.length; t++)
+	retArray[t] = c[t];
+	 return retArray;
+	}
+
+public static void main(String[] args) {
+	
+	System.out.println(Arrays.toString(a5(new int[] {1,0,2}, new int[] {2,0,1})));
+   // System.out.println(Arrays.toString(a5(new int[] {0,1,2,1}, new int[] {2,0,1})));
+	//System.out.println(equivalentArrays(new int[] {2,0,1}, new int[] {0,1,2,1}));
+//	System.out.println(equivalentArrays(new int[] {0,5,5,5,1,2,1}, new int[] {5,2,0,1}));
+//	System.out.println(equivalentArrays(new int[] {5,2,0,1}, new int[] {0,5,5,5,1,2,1}));
+//	System.out.println(equivalentArrays(new int[] {0,2,1,2}, new int[] {3,2,2,0}));
+//	System.out.println(equivalentArrays(new int[] {3,1,2,0}, new int[] {0,2,1,0}));
+//	System.out.println(equivalentArrays(new int[] {1,1,1,1,1}, new int[] {1,1,1,1,2,1}));
+//	System.out.println(equivalentArrays(new int[] {}, new int[] {3,1,1,1,1,2}));
+//	System.out.println(equivalentArrays(new int[] {}, new int[] {}));
+//	
+}
+}
