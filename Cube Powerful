@@ -1,0 +1,25 @@
+public class CubePowerful {
+
+	public static void main(String[] args) {
+		System.out.println(isCubePowerful(153));
+		System.out.println(isCubePowerful(370));
+		System.out.println(isCubePowerful(371));
+		System.out.println(isCubePowerful(407));
+		System.out.println(isCubePowerful(87));
+		System.out.println(isCubePowerful(0));
+		System.out.println(isCubePowerful(-81));
+	}
+
+	static int isCubePowerful(int n){
+        if(n<=0) return 0;
+        int originalNum = n;
+        int totalSum = 0;
+        while(n!=0){
+            int digit = n%10;
+            totalSum += digit*digit*digit;
+            n = n/10;
+        }
+        return originalNum == totalSum ? 1 : 0;
+}
+    
+}
