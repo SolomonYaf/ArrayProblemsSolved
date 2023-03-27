@@ -1,0 +1,27 @@
+public class IsDivisiblyBy {
+
+	public static void main(String[] args) {
+		
+		//int []a1= {3,4,3,6,36}; int divider1= 3;
+		System.out.println(isDivisibleBy(new int[]{3,3,6,36},3));
+		System.out.println(isDivisibleBy(new int[]{3,4,3,6,36},3));
+		System.out.println(isDivisibleBy(new int[]{4},2));
+		System.out.println(isDivisibleBy(new int[]{6,12,24,36},12));
+		System.out.println(isDivisibleBy(new int[]{},2));
+
+	}
+	public static int isDivisibleBy(int[] a, int divider) {
+		
+		//if (a.length==0) return 1;
+		for (int i=0; i<a.length; i++) {
+			
+			if(a[i]%divider!=0) {
+				return 0;// if the return is set to 1 it always returns 1 before completing the loop
+			
+			}
+		}
+		return 1;
+		
+	}
+
+}
